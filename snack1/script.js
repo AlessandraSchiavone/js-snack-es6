@@ -44,24 +44,22 @@ const bici = [
         peso:12,
     }
 ]
-console.log(bici);
+
 var minPeso;
 var pesi= [];
 
 for(i=0;i<bici.length;i++){
-pesi.push(bici[i].peso);
-    
+    var {peso} = bici[i]; 
+    pesi.push(peso);   
 }
 minPeso =minimo(pesi);
-
 function minimo(pesi) {
   return Math.min.apply(Math, pesi);
 }
-
 var messaggio = `Il minor peso è: ${minPeso} `;
 var messaggio2;
-for(i=0; i< bici.length;i++){
-    if(bici[i].peso == minPeso){
+for(i=0; i< pesi.length;i++){
+    if(pesi[i] == minPeso){
         messaggio2 = `La bici con minor peso è: ${bici[i].nome} `;
      }
 }
